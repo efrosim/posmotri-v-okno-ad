@@ -1,21 +1,22 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html {
-  block-size: 100%;
+    block-size: 100%;
 }
 
 .page {
-  inline-size: 1200px;
-  block-size: 100%;
-  margin: auto;
-  color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
-  font-size: 18px;
-  background-color: #1b1919;
+    inline-size: 1200px;
+    block-size: 100%;
+    margin: auto;
+    color: #fff;
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-size: 18px;
+    background-color: #1b1919;
+    padding: 133px 30px;
 }
 
 h1,
@@ -28,24 +29,300 @@ ol,
 li,
 blockquote,
 fieldset {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 ul,
 ol {
-  list-style: none;
+    list-style: none;
 }
 
 /* Кастомный скроллбар */
 .custom-scrollbar::-webkit-scrollbar {
-  width: 4px;
+    width: 4px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: rgb(217 217 217 / 10%);
+    background: rgb(217 217 217 / 10%);
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #D9D9D9;
+    background-color: #D9D9D9;
+}
+
+.content {
+    display: flex;
+    width: 1140px;
+    height: 534px;
+    gap: 30px;
+}
+
+.result {
+    width: 711px;
+    height: 456px;
+    gap: 16px;
+    margin-top: 78px;
+    margin-bottom: 70px;
+}
+
+.result__video-container {
+    width: 711px;
+    height: 386px;
+    position: relative;
+
+}
+
+.result__video {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+}
+
+.search-form {
+    margin-top: 16px;
+    display: flex;
+    gap: 40px;
+    /*width: 711px;*/
+    /*height: 54px;*/
+    column-gap: 40px;
+    max-height: 54px;
+}
+
+.search-form__fieldset {
+    border: none;
+    font-family: Fira Sans Condensed, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.search-form__fieldset-title {
+    font-weight: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    color: white;
+}
+
+.search-form__label {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.visually-hidden {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    inline-size: 1px;
+    block-size: 1px;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+.search-form__textfield {
+    font-weight: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    width: 225px;
+    background-color: transparent;
+    border-inline: none;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    margin-bottom: 3px;
+    color: white;
+    padding-left: 0;
+    margin-top: 5px;
+}
+
+.search-form__textfield::placeholder {
+    color: rgba(255 255 255 /0.7);
+}
+
+.search-form__textfield:focus {
+    outline: 1px solid rgba(255 255 255 /0.7);
+}
+
+.search-form__fieldset-title {
+    font-weight: inherit;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.search-form__checkbox-list {
+    margin-top: 5px;
+    min-width: 212px;
+    display: flex;
+    gap: 15px;;
+}
+
+.search-form__checkbox {
+    appearance: none;
+}
+
+.search-form__checkbox + .search-form__pseudo-checkbox {
+    inline-size: 19px;
+    block-size: 19px;
+    border: 1px solid currentColor;
+    display: block;
+    cursor: pointer;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::before {
+    background-color: white;
+    inline-size: 15px;
+    block-size: 15px;
+    content: "";
+    display: block;
+    margin: 1px;
+}
+
+.button {
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.button:active {
+    background-color: #545050;
+}
+
+.button:hover {
+    text-decoration: underline;
+}
+
+.search-form__textfield:has(:focus-visible){
+    outline: 1px solid currentColor;
+    outline-offset: 0px;
+}
+
+.search-form__label:has(:focus-visible){
+    outline: 1px solid currentColor;
+    outline-offset: 1px;
+}
+
+.button:focus-visible{
+    outline: 1px solid currentColor;
+    outline-offset: 1px;
+}
+
+.content__card-link:focus-visible{
+    outline: 1px solid currentColor;
+}
+
+.button.search-form__submit-button {
+    width: 194px;
+    height: 34px;
+    margin-top: 20px;
+}
+
+.button.more-button {
+    width: 100%;
+    margin-top:30px;
+    height: 34px;
+}
+
+.search-form__label:has(.search-form__checkbox):hover{
+    text-decoration: underline;
+}
+
+.search-form__label-text{
+    cursor: pointer;
+}
+
+.content__details {
+    width: 399px;
+    height: 534px;
+}
+
+.title {
+    margin-top: 0px;
+    width: 259px;
+    height: 210px;
+    font-family: Oswald, sans-serif;
+    font-weight: 700;
+    font-size: 75px;
+    line-height: 94%;
+    text-transform: uppercase;
+}
+
+.content__accent{
+    color: #545050;
+}
+
+.content__list-container {
+    overflow-y: scroll;
+    margin-top: 26px;
+    padding: 0px;
+    margin-left: 2px;
+    max-height: 298px;
+}
+
+.content__list {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.content__list-item {
+    height: 103px;
+    width: 390px;
+}
+
+.content__video-card {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.content__video-card-title {
+    font-family: Oswald, sans-serif;
+    margin-top: -5px;
+    font-weight: 700;
+    font-size: 30px;
+    text-transform: uppercase;
+    color: white;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.content__video-card-description-container {
+    width: 196px;
+}
+
+.content__video-card-description {
+    font-family: Fira Sans Condensed, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 16.2px;
+    color: white;
+}
+
+.content__card-link {
+    text-decoration: none;
+}
+
+.content__list-item:active {
+    background: #545050;
+}
+
+.content__card-link:hover {
+    text-decoration: underline;
+    color: white;
+}
+
+.content__card-link:focus-visible {
+    outline: 1px solid white;
+}
+
+.content__video-card-thumbnail {
+    width: 194px;
+    height: 103px;
+    object-fit: cover;
+    object-position: center;
 }
